@@ -1,0 +1,1183 @@
+{
+	"info": {
+		"_postman_id": "dcc4afc9-bcd1-4b1b-b54f-899430ec2dbc",
+		"name": "Mini Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22941647"
+	},
+	"item": [
+		{
+			"name": "Fake Store API",
+			"item": [
+				{
+					"name": "01_fetch all products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_fetch single product with id 17",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/17",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_fetching product with non-existing id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/29",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_fetching products with invalid id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/tyui",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"tyui"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_fetch a product from non existing resource",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_fetch a product with resource case sensitivity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Products/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_delete a single product with id 1",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08_delete a product with non existing id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/21",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09_delete a product from nonexisting resource",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10_modify a product with id 1",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"title\": \"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops\",\r\n        \"price\": 109.95,\r\n        \"description\": \"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday\",\r\n        \"category\": \"jewelery\",\r\n        \"image\": \"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg\",\r\n        \"rating\": {\r\n            \"rate\": 3.9,\r\n            \"count\": 120\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11_modify a product's id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/products/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "12_modify a cart item with diff id(id given as 1 in payload)",
+					"protocolProfileBehavior": {
+						"strictSSL": false
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"userId\": 1,\r\n    \"date\": \"2020-03-01T00:00:02.000Z\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": 7,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 8,\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carts/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13_modify cart item without id(id not mentioned in payload)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 3,\r\n    \"date\": \"2020-03-01T00:00:02.000Z\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": 7,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 8,\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carts/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14_modify a cart item's details",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"userId\": 3,\r\n    \"date\": \"2020-03-01T00:00:02.000Z\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": 7,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"productId\": 10,\r\n            \"quantity\": 7\r\n        }\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carts/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15_modifying cart item's partial body",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"userId\": 3,\r\n    \"date\": \"2021-03-01T00:00:02.000Z\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": 7,\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carts/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "16_add new product to products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 21,\r\n    \"title\": \"Mens casual denim jacket\",\r\n    \"price\": 20,\r\n    \"description\": \"Finely made in Germany. Color is navy blue.\",\r\n    \"category\": \"men's clothing\",\r\n    \"image\": \"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg\",\r\n    \"rating\": {\r\n        \"rate\": 3.5,\r\n        \"count\": 80\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "17_modify partial carts details",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 7,\r\n    \"date\": \"2022-03-02T02:67:02.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/carts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "18_JSON schema validation(products)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const Ajv=require(\"ajv\")\r",
+									"\r",
+									"const ajv=new Ajv()\r",
+									"\r",
+									"pm.test(\"JSON Schema Validation\",function()\r",
+									"\r",
+									"{\r",
+									"\r",
+									"    var jsonData=pm.response.json();\r",
+									"\r",
+									"    var schema={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"$id\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"title\": \"Core schema meta-schema\",\r",
+									"    \"definitions\": {\r",
+									"        \"schemaArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"minItems\": 1,\r",
+									"            \"items\": { \"$ref\": \"#\" }\r",
+									"        },\r",
+									"        \"nonNegativeInteger\": {\r",
+									"            \"type\": \"integer\",\r",
+									"            \"minimum\": 0\r",
+									"        },\r",
+									"        \"nonNegativeIntegerDefault0\": {\r",
+									"            \"allOf\": [\r",
+									"                { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"                { \"default\": 0 }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"simpleTypes\": {\r",
+									"            \"enum\": [\r",
+									"                \"array\",\r",
+									"                \"boolean\",\r",
+									"                \"integer\",\r",
+									"                \"null\",\r",
+									"                \"number\",\r",
+									"                \"object\",\r",
+									"                \"string\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"stringArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": { \"type\": \"string\" },\r",
+									"            \"uniqueItems\": true,\r",
+									"            \"default\": []\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": [\"object\", \"boolean\"],\r",
+									"    \"properties\": {\r",
+									"        \"$id\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$schema\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri\"\r",
+									"        },\r",
+									"        \"$ref\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$comment\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"title\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"description\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"default\": true,\r",
+									"        \"readOnly\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"examples\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true\r",
+									"        },\r",
+									"        \"multipleOf\": {\r",
+									"            \"type\": \"number\",\r",
+									"            \"exclusiveMinimum\": 0\r",
+									"        },\r",
+									"        \"maximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMaximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"minimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMinimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"maxLength\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minLength\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"pattern\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"regex\"\r",
+									"        },\r",
+									"        \"additionalItems\": { \"$ref\": \"#\" },\r",
+									"        \"items\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#\" },\r",
+									"                { \"$ref\": \"#/definitions/schemaArray\" }\r",
+									"            ],\r",
+									"            \"default\": true\r",
+									"        },\r",
+									"        \"maxItems\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minItems\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"uniqueItems\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"contains\": { \"$ref\": \"#\" },\r",
+									"        \"maxProperties\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minProperties\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"required\": { \"$ref\": \"#/definitions/stringArray\" },\r",
+									"        \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"        \"definitions\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"properties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"patternProperties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"propertyNames\": { \"format\": \"regex\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"dependencies\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": {\r",
+									"                \"anyOf\": [\r",
+									"                    { \"$ref\": \"#\" },\r",
+									"                    { \"$ref\": \"#/definitions/stringArray\" }\r",
+									"                ]\r",
+									"            }\r",
+									"        },\r",
+									"        \"propertyNames\": { \"$ref\": \"#\" },\r",
+									"        \"const\": true,\r",
+									"        \"enum\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true,\r",
+									"            \"minItems\": 1,\r",
+									"            \"uniqueItems\": true\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                {\r",
+									"                    \"type\": \"array\",\r",
+									"                    \"items\": { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                    \"minItems\": 1,\r",
+									"                    \"uniqueItems\": true\r",
+									"                }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"format\": { \"type\": \"string\" },\r",
+									"        \"contentMediaType\": { \"type\": \"string\" },\r",
+									"        \"contentEncoding\": { \"type\": \"string\" },\r",
+									"        \"if\": {\"$ref\": \"#\"},\r",
+									"        \"then\": {\"$ref\": \"#\"},\r",
+									"        \"else\": {\"$ref\": \"#\"},\r",
+									"        \"allOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"anyOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"oneOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"not\": { \"$ref\": \"#\" }\r",
+									"    },\r",
+									"    \"default\": true\r",
+									"}\r",
+									"const validate=ajv.compile(schema)\r",
+									"\r",
+									"    const valid = ajv.validate(jsonData)\r",
+									"\r",
+									"    //if (!valid) console.log(ajv.errors)\r",
+									"\r",
+									"    \r",
+									"\r",
+									"    pm.expect(valid).to.be.true;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "19_JSON schema validation(cart items)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const Ajv=require(\"ajv\")\r",
+									"\r",
+									"const ajv=new Ajv()\r",
+									"\r",
+									"pm.test(\"JSON Schema Validation\",function()\r",
+									"\r",
+									"{\r",
+									"\r",
+									"    var jsonData=pm.response.json();\r",
+									"\r",
+									"    var schema={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"$id\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"title\": \"Core schema meta-schema\",\r",
+									"    \"definitions\": {\r",
+									"        \"schemaArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"minItems\": 1,\r",
+									"            \"items\": { \"$ref\": \"#\" }\r",
+									"        },\r",
+									"        \"nonNegativeInteger\": {\r",
+									"            \"type\": \"integer\",\r",
+									"            \"minimum\": 0\r",
+									"        },\r",
+									"        \"nonNegativeIntegerDefault0\": {\r",
+									"            \"allOf\": [\r",
+									"                { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"                { \"default\": 0 }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"simpleTypes\": {\r",
+									"            \"enum\": [\r",
+									"                \"array\",\r",
+									"                \"boolean\",\r",
+									"                \"integer\",\r",
+									"                \"null\",\r",
+									"                \"number\",\r",
+									"                \"object\",\r",
+									"                \"string\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"stringArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": { \"type\": \"string\" },\r",
+									"            \"uniqueItems\": true,\r",
+									"            \"default\": []\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": [\"object\", \"boolean\"],\r",
+									"    \"properties\": {\r",
+									"        \"$id\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$schema\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri\"\r",
+									"        },\r",
+									"        \"$ref\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$comment\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"title\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"description\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"default\": true,\r",
+									"        \"readOnly\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"examples\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true\r",
+									"        },\r",
+									"        \"multipleOf\": {\r",
+									"            \"type\": \"number\",\r",
+									"            \"exclusiveMinimum\": 0\r",
+									"        },\r",
+									"        \"maximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMaximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"minimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMinimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"maxLength\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minLength\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"pattern\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"regex\"\r",
+									"        },\r",
+									"        \"additionalItems\": { \"$ref\": \"#\" },\r",
+									"        \"items\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#\" },\r",
+									"                { \"$ref\": \"#/definitions/schemaArray\" }\r",
+									"            ],\r",
+									"            \"default\": true\r",
+									"        },\r",
+									"        \"maxItems\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minItems\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"uniqueItems\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"contains\": { \"$ref\": \"#\" },\r",
+									"        \"maxProperties\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minProperties\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"required\": { \"$ref\": \"#/definitions/stringArray\" },\r",
+									"        \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"        \"definitions\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"properties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"patternProperties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"propertyNames\": { \"format\": \"regex\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"dependencies\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": {\r",
+									"                \"anyOf\": [\r",
+									"                    { \"$ref\": \"#\" },\r",
+									"                    { \"$ref\": \"#/definitions/stringArray\" }\r",
+									"                ]\r",
+									"            }\r",
+									"        },\r",
+									"        \"propertyNames\": { \"$ref\": \"#\" },\r",
+									"        \"const\": true,\r",
+									"        \"enum\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true,\r",
+									"            \"minItems\": 1,\r",
+									"            \"uniqueItems\": true\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                {\r",
+									"                    \"type\": \"array\",\r",
+									"                    \"items\": { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                    \"minItems\": 1,\r",
+									"                    \"uniqueItems\": true\r",
+									"                }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"format\": { \"type\": \"string\" },\r",
+									"        \"contentMediaType\": { \"type\": \"string\" },\r",
+									"        \"contentEncoding\": { \"type\": \"string\" },\r",
+									"        \"if\": {\"$ref\": \"#\"},\r",
+									"        \"then\": {\"$ref\": \"#\"},\r",
+									"        \"else\": {\"$ref\": \"#\"},\r",
+									"        \"allOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"anyOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"oneOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"not\": { \"$ref\": \"#\" }\r",
+									"    },\r",
+									"    \"default\": true\r",
+									"}\r",
+									"const validate=ajv.compile(schema)\r",
+									"\r",
+									"    const valid = ajv.validate(jsonData)\r",
+									"\r",
+									"    //if (!valid) console.log(ajv.errors)\r",
+									"\r",
+									"    \r",
+									"\r",
+									"    pm.expect(valid).to.be.true;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/carts/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "20_JSON schema validation(users)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const Ajv=require(\"ajv\")\r",
+									"\r",
+									"const ajv=new Ajv()\r",
+									"\r",
+									"pm.test(\"JSON Schema Validation\",function()\r",
+									"\r",
+									"{\r",
+									"\r",
+									"    var jsonData=pm.response.json();\r",
+									"\r",
+									"    var schema={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"$id\": \"http://json-schema.org/draft-07/schema#\",\r",
+									"    \"title\": \"Core schema meta-schema\",\r",
+									"    \"definitions\": {\r",
+									"        \"schemaArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"minItems\": 1,\r",
+									"            \"items\": { \"$ref\": \"#\" }\r",
+									"        },\r",
+									"        \"nonNegativeInteger\": {\r",
+									"            \"type\": \"integer\",\r",
+									"            \"minimum\": 0\r",
+									"        },\r",
+									"        \"nonNegativeIntegerDefault0\": {\r",
+									"            \"allOf\": [\r",
+									"                { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"                { \"default\": 0 }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"simpleTypes\": {\r",
+									"            \"enum\": [\r",
+									"                \"array\",\r",
+									"                \"boolean\",\r",
+									"                \"integer\",\r",
+									"                \"null\",\r",
+									"                \"number\",\r",
+									"                \"object\",\r",
+									"                \"string\"\r",
+									"            ]\r",
+									"        },\r",
+									"        \"stringArray\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": { \"type\": \"string\" },\r",
+									"            \"uniqueItems\": true,\r",
+									"            \"default\": []\r",
+									"        }\r",
+									"    },\r",
+									"    \"type\": [\"object\", \"boolean\"],\r",
+									"    \"properties\": {\r",
+									"        \"$id\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$schema\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri\"\r",
+									"        },\r",
+									"        \"$ref\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"uri-reference\"\r",
+									"        },\r",
+									"        \"$comment\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"title\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"description\": {\r",
+									"            \"type\": \"string\"\r",
+									"        },\r",
+									"        \"default\": true,\r",
+									"        \"readOnly\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"examples\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true\r",
+									"        },\r",
+									"        \"multipleOf\": {\r",
+									"            \"type\": \"number\",\r",
+									"            \"exclusiveMinimum\": 0\r",
+									"        },\r",
+									"        \"maximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMaximum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"minimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"exclusiveMinimum\": {\r",
+									"            \"type\": \"number\"\r",
+									"        },\r",
+									"        \"maxLength\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minLength\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"pattern\": {\r",
+									"            \"type\": \"string\",\r",
+									"            \"format\": \"regex\"\r",
+									"        },\r",
+									"        \"additionalItems\": { \"$ref\": \"#\" },\r",
+									"        \"items\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#\" },\r",
+									"                { \"$ref\": \"#/definitions/schemaArray\" }\r",
+									"            ],\r",
+									"            \"default\": true\r",
+									"        },\r",
+									"        \"maxItems\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minItems\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"uniqueItems\": {\r",
+									"            \"type\": \"boolean\",\r",
+									"            \"default\": false\r",
+									"        },\r",
+									"        \"contains\": { \"$ref\": \"#\" },\r",
+									"        \"maxProperties\": { \"$ref\": \"#/definitions/nonNegativeInteger\" },\r",
+									"        \"minProperties\": { \"$ref\": \"#/definitions/nonNegativeIntegerDefault0\" },\r",
+									"        \"required\": { \"$ref\": \"#/definitions/stringArray\" },\r",
+									"        \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"        \"definitions\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"properties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"patternProperties\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": { \"$ref\": \"#\" },\r",
+									"            \"propertyNames\": { \"format\": \"regex\" },\r",
+									"            \"default\": {}\r",
+									"        },\r",
+									"        \"dependencies\": {\r",
+									"            \"type\": \"object\",\r",
+									"            \"additionalProperties\": {\r",
+									"                \"anyOf\": [\r",
+									"                    { \"$ref\": \"#\" },\r",
+									"                    { \"$ref\": \"#/definitions/stringArray\" }\r",
+									"                ]\r",
+									"            }\r",
+									"        },\r",
+									"        \"propertyNames\": { \"$ref\": \"#\" },\r",
+									"        \"const\": true,\r",
+									"        \"enum\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": true,\r",
+									"            \"minItems\": 1,\r",
+									"            \"uniqueItems\": true\r",
+									"        },\r",
+									"        \"type\": {\r",
+									"            \"anyOf\": [\r",
+									"                { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                {\r",
+									"                    \"type\": \"array\",\r",
+									"                    \"items\": { \"$ref\": \"#/definitions/simpleTypes\" },\r",
+									"                    \"minItems\": 1,\r",
+									"                    \"uniqueItems\": true\r",
+									"                }\r",
+									"            ]\r",
+									"        },\r",
+									"        \"format\": { \"type\": \"string\" },\r",
+									"        \"contentMediaType\": { \"type\": \"string\" },\r",
+									"        \"contentEncoding\": { \"type\": \"string\" },\r",
+									"        \"if\": {\"$ref\": \"#\"},\r",
+									"        \"then\": {\"$ref\": \"#\"},\r",
+									"        \"else\": {\"$ref\": \"#\"},\r",
+									"        \"allOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"anyOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"oneOf\": { \"$ref\": \"#/definitions/schemaArray\" },\r",
+									"        \"not\": { \"$ref\": \"#\" }\r",
+									"    },\r",
+									"    \"default\": true\r",
+									"}\r",
+									"const validate=ajv.compile(schema)\r",
+									"\r",
+									"    const valid = ajv.validate(jsonData)\r",
+									"\r",
+									"    //if (!valid) console.log(ajv.errors)\r",
+									"\r",
+									"    \r",
+									"\r",
+									"    pm.expect(valid).to.be.true;\r",
+									"\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "21_pre-request script",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"This is pre request script\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//console.log(\"This is post request script\");\r",
+									"let jsonResponse = pm.response.json();\r",
+									"let title = jsonResponse.title;\r",
+									"let category = jsonResponse.category;\r",
+									"pm.collectionVariables.set(\"ProductTitle\", title);\r",
+									"pm.collectionVariables.set(\"ProductCategory\", category);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "22_pre-request script(using title value from previous request)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"Detail\", pm.collectionVariables.get(\"ProductTitle\") +\":\"+ pm.collectionVariables.get(\"ProductCategory\") );"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Product details are \"+ pm.collectionVariables.get(\"Detail\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"The request about to run is : \" , pm.info.requestName);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://fakestoreapi.com"
+		},
+		{
+			"key": "ProductTitle",
+			"value": ""
+		},
+		{
+			"key": "ProductCategory",
+			"value": ""
+		},
+		{
+			"key": "Detail",
+			"value": ""
+		}
+	]
+}

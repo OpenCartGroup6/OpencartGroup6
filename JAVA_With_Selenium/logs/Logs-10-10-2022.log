@@ -1,0 +1,11 @@
+10:10:2022 - 16:01:48.579 INFO com.test.Register_test [main] - Testing register with valid credentials...
+10:10:2022 - 16:02:28.948 INFO com.test.Register_test [main] - Testing register with invalid credentials...
+10:10:2022 - 16:03:09.082 INFO com.test.Register_test [main] - Testing register with empty credentials...
+10:10:2022 - 16:14:18.648 INFO com.pages.Login_page [main] - logging into the site..
+10:10:2022 - 16:14:30.375 INFO com.pages.Login_page [main] - log in successful..
+10:10:2022 - 16:15:01.858 INFO com.pages.Account_page [main] - account details edited..
+10:10:2022 - 16:15:08.879 INFO com.pages.Account_page [main] - change the password..
+10:10:2022 - 16:15:16.764 INFO com.pages.Account_page [main] - Password changed successfully..
+10:10:2022 - 16:15:22.022 INFO com.pages.Marketplace_page [main] - searching by rating..
+10:10:2022 - 16:15:23.972 INFO com.pages.Marketplace_page [main] - searching by version..
+10:10:2022 - 16:15:26.737 INFO com.pages.Marketplace_page [main] - searching for watch..

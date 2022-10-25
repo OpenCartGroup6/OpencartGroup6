@@ -1,0 +1,13 @@
+11:10:2022 - 22:09:23.081 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:11:32.176 INFO com.pages.Login_page [main] - log in successful..
+11:10:2022 - 22:12:05.324 INFO com.pages.Download_page [main] - localhost file downloaded..
+11:10:2022 - 22:12:41.210 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:13:07.956 INFO com.pages.Login_page [main] - log in successful..
+11:10:2022 - 22:21:50.795 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:22:07.307 INFO com.pages.Login_page [main] - log in successful..
+11:10:2022 - 22:28:56.878 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:31:08.322 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:31:55.774 INFO com.pages.Login_page [main] - log in successful..
+11:10:2022 - 22:34:30.967 INFO com.pages.Login_page [main] - logging into the site..
+11:10:2022 - 22:34:51.072 INFO com.pages.Login_page [main] - log in successful..
+11:10:2022 - 22:35:19.116 INFO com.pages.Download_page [main] - extension downloaded..

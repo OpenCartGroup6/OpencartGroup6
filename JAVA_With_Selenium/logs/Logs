@@ -1,0 +1,9 @@
+13:10:2022 - 17:00:30.689 INFO com.pages.Login_page [main] - logging into the site..
+13:10:2022 - 17:00:43.219 INFO com.pages.Login_page [main] - log in successful..
+13:10:2022 - 17:00:45.220 INFO com.pages.Marketplace_page [main] - searching by rating..
+13:10:2022 - 17:00:48.471 INFO com.pages.Marketplace_page [main] - searching by version..
+13:10:2022 - 17:01:01.475 INFO com.pages.Login_page [main] - logging into the site..
+13:10:2022 - 17:01:14.659 INFO com.pages.Login_page [main] - log in successful..
+13:10:2022 - 17:03:28.253 INFO com.pages.Login_page [main] - logging into the site..
+13:10:2022 - 17:04:01.311 INFO com.pages.Login_page [main] - logging into the site..
+13:10:2022 - 17:04:10.410 INFO com.pages.Login_page [main] - log in successful..

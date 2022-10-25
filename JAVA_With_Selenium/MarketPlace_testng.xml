@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+   <parameter name="card_no" value="1111111111111111" />
+   <parameter name="pin_no" value="909" />
+   <parameter name="loginEmail" value="nupurkomari227@gmail.com" />
+   <parameter name="LoginPass" value="pqrs@1234" />
+   <parameter name="LoginPin" value="2345" />
+   <classes>
+      <class name="com.test.MarketPlace_test"/>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
